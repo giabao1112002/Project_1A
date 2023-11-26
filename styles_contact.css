@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100,300,700,900');
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css');
+
+body {
+   background-color: whitesmoke;
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   
+}
+
+#header img{
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+#header .container-fluid{
+    text-align: right;
+}
+
+.container-fluid{
+    color: black;
+}
+
+
+.btn-primary {
+    color: #fff;
+    background-color: red;
+    border-color: #357ebd; /*set the color you want here*/
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: #00b3db;
+    border-color: #285e8e; /*set the color you want here*/
+}
+#content1{
+    margin: auto;
+    background-image: url(img/pageimg.jpg);
+    width: 70%;
+    height: 500px;
+}
+.container-sm-1{
+    text-align: right;
+    margin-right: 10px;
+    margin-top: 10px;
+    
+}
+.card{
+    text-align: center;
+    width: 70%;
+    margin:auto;
+}
+.card img{
+    margin: auto;
+    width: 100px;
+}
+#content2{
+    width: 70%;
+    height: fit-content;
+}
+#content2 .list{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+
+
+.card{
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 500px;
+    background-color:whitesmoke;
+    height: 112vh;
+    overflow: visible;
+}
+.listCard {
+    height: 90vh; /* Adjust the height as needed */
+    overflow-y: auto; /* Add vertical scrollbar when content overflows */
+    border: 1px solid #ccc; /* Optional: Add a border for styling */
+    padding: 10px; /* Optional: Add padding for better spacing */
+    list-style: none; /* Remove default list bullet points */
+  }
+.card h1{
+    color:black;
+    font-weight: 100;
+    margin: 0;
+    padding: 0 20px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+.card .checkout{
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+.card .checkout div{
+    background-color: yellow;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card .checkoutd div:nth-child(2){
+    background-color:yellow ;
+    color: black;
+}
+
+.active  .card{
+    left: calc(100%-50%);
+}
+.active .buy{
+    transform: translateX(-200px);
+}
+.buy{
+    width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+    height: auto ;
+    overflow: visible;
+}
+.header1{
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 50px;
+}
+.header1 .shopping{
+    position: relative;
+    text-align: right;
+}
+.header1 .shopping img{
+width: 40px;
+}
+.header1 .shopping span{
+    background-color: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    color: black;
+    align-content: center;
+    position: absolute;
+    top:-5px;
+    left:80%;
+    padding: 3px 10px;
+
+}
+
+
+
+.buy .list{
+    display: grid;
+    grid-template-columns:repeat(3,1fr) ;
+    column-gap: 20px;
+    row-gap: 20px;
+    margin-top: 50px;
+}
+
+.buy .list .item{
+text-align: center;
+background-color: white;
+padding: 20px;
+box-shadow: 0 50px 50px gray;
+letter-spacing: 1px;
+}
+.buy .list .item img{
+    width: 90%;
+}
+.buy .list .item .title{
+    font-weight: 600;
+}
+.buy .list .item .price{
+    margin: 10px;
+}
+.buy .list .item button{
+    background-color: black;
+    color: whitesmoke;
+    padding: 10px;
+    width:100% ;
+}
+.listCard li{
+    display: grid;
+    grid-template-columns: 100px repeat(3,1fr);
+    color: black;
+    row-gap: 10px;
+    margin-bottom: 20px;
+}
+.listCard li div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.listCard li img{
+    width: 90%;
+}
+.listCard button{
+    width: auto;
+    background-color: gray;
+    border: none;
+}
+.listCard .count{
+    margin: 0 10px;
+}
