@@ -47,24 +47,23 @@ let product=[
 let listCards=[];
 
 
-
-function displayProducts() {
-    let list = document.querySelector('.list');
+function initApp(){
+    const list = document.querySelector('.list');
     list.innerHTML = ''; // Clear previous content
-
-    product.forEach((value, key) => {
+    product.forEach((value,key)=>{
         let newDiv = document.createElement('div');
         newDiv.classList.add('item');
-        newDiv.innerHTML = `
-            <img src="${value.img}" alt="${value.name}"/>
-            <div class="title">${value.name}</div>
-            <div class= "price">${value.price.toLocaleString()}</div>
-            <button onclick="addToCart(${key})">Add To Cart</button>
+        newDiv.innerHTML=` 
+        <img src="${value.img}" alt="${value.name}"/>
+        <div class="title">${value.name}</div>
+        <div class= "price">${value.price.toLocaleString()}</div>
+        <button onclick="addToCard(${key})">Add To Card</button>
         `;
        
         list.appendChild(newDiv);
-    });
+    })
 }
+
 
 
 
@@ -129,7 +128,7 @@ function changeQuantity(key,quantity){
 
 function sortProductsByPrice() {
     product.sort((a, b) => a.price - b.price);
-    displayProducts();
+    initApp();
 }
 
 document.getElementById('sortButton').addEventListener('click', sortProductsByPrice);
