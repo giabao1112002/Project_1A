@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="styles_homepage.css">
 </head>
 
-<body>
+<body onload="initApp()">
   <div class="shadow p-3 mb-5 bg-body rounded">
     <div id="header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,7 +43,7 @@
               </li>
             </ul>
             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchfood">
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
 
@@ -64,41 +64,54 @@
 
   <div class="buy">
     <div class="header1">
-      <h1>Your Shopping Cart</h1>
+      <h1>Menu</h1>
       <div class="shopping">
         <img src="img/buyicon.png">
         <span class="quantity">0</span>
       </div>
     </div>
-    <div class="list"></div>
+
+    <div class="submenu">
+      <button id="sortButton">Sort by Price</button>
+      <div class="list"></div>
+    </div>
+
  
-  
-  
-  <div class="card">
-    <h1>Cart</h1>
-    <ul class="listCard"></ul>
-    <div class="checkout">
-      <div class="total">0</div>
-      <div class="closeShopping">Close</div>
+    
+
+
+    <div class="card">
+      <h1>Cart</h1>
+      <ul class="listCard"></ul>
+      <div class="checkout">
+        <div class="total" style="color: white;">0</div>
+        <div class="closeShopping" style="color: white;">Close</div>
+        <center>
+          <div class="Order" style="color: white;">
+            <a href="" style="color: white;">Order Now</a>
+          </div>
+        </center>
+      </div>
+
+
     </div>
   </div>
-</div>
- 
+
 
 
   <footer class="text-center text-lg-start" style="background-color:black;">
     <div class="container d-flex justify-content-center py-5">
-      <button type="button"  style="background-color: #54456b;">
-        <i ><box-icon name='facebook-square' type='logo' ></box-icon> </i>
+      <button type="button" style="background-color: #54456b;">
+        <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
       </button>
-      <button type="button"  style="background-color: #54456b;">
-        <i ><box-icon name='youtube' type='logo' ></box-icon> </i>
+      <button type="button" style="background-color: #54456b;">
+        <i><box-icon name='youtube' type='logo'></box-icon> </i>
       </button>
-      <button type="button"  style="background-color: #54456b;">
-        <i><box-icon name='twitter' type='logo' ></box-icon> </i>
+      <button type="button" style="background-color: #54456b;">
+        <i><box-icon name='twitter' type='logo'></box-icon> </i>
       </button>
-      <button type="button"  style="background-color: #54456b;">
-        <i ><box-icon name='facebook-square' type='logo' ></box-icon> </i>
+      <button type="button" style="background-color: #54456b;">
+        <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
       </button>
     </div>
 
@@ -109,9 +122,9 @@
     </div>
     <!-- Copyright -->
   </footer>
-  
 
-<!-- End of .container -->
+
+  <!-- End of .container -->
 
 
 

@@ -13,115 +13,63 @@ openShopping.addEventListener('click',()=>{
 closeShopping.addEventListener('click',()=>{
     body.classList.remove('active');
 })
+
+
 let product=[
     {
         id:1,
-        name:'Hamburger',
-        img: 'img/Hamburger1.png',
+        name:"Hamburger",
+        img: "img/Hamburger1.png",
         price:80000
     },
     {
         id:2,
-        name:'HotDog',
-        img:'Hamburger1.png',
-        price:30000
+        name:"HotDog",
+        img:"Hamburger1.png",
+        price:300000
 
     },
     {
         id:3,
-        name:'IceCream',
-        img:'img/Hamburger1.png',
+        name:"IceCream",
+        img:"img/Hamburger1.png",
         price:15000
 
     },
     {
-        id:4,
-        name:'Pepsi',
-        img:'img/Hamburger1.png',
-        price:15000
-
-    },
-    {
-        id:5,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:6,
-        name:'Ramen',
-        img:'img/Hamburger1.png',
-        price:80000
-
-    },
-    {
-        id:7,
-        name:'French Fries',
-        img:'img/Hamburger1.png',
-        price:15000
-
-    },
-    {
-        id:8,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:9,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:10,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:11,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:12,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
-    },
-    {
-        id:13,
-        name:'Pizza',
-        img:'img/Hamburger1.png',
-        price:150000
-
+        id:3,
+        name:"IceCream",
+        img:"img/Hamburger1.png",
+        price:1500000
     }
 ];
+
 let listCards=[];
-function initApp(){
-    product.forEach((value,key)=>{
+
+
+
+function displayProducts() {
+    let list = document.querySelector('.list');
+    list.innerHTML = ''; // Clear previous content
+
+    product.forEach((value, key) => {
         let newDiv = document.createElement('div');
         newDiv.classList.add('item');
-        newDiv.innerHTML=` 
-        <img src="image/$S{value.image}"/>
-        <div class="title">${value.name}</div>
-        <div class= "price">${value.price.toLocaleString()}</div>
-        <button onclick="addToCard(${key})">Add To Card</button>
+        newDiv.innerHTML = `
+            <img src="${value.img}" alt="${value.name}"/>
+            <div class="title">${value.name}</div>
+            <div class= "price">${value.price.toLocaleString()}</div>
+            <button onclick="addToCart(${key})">Add To Cart</button>
         `;
        
         list.appendChild(newDiv);
-    })
+    });
 }
 
-initApp();
+
+
+
+
 function addToCard(key) {
     if (listCards[key] == null) {
         listCards[key] = product[key];
@@ -145,7 +93,7 @@ function reloadCard() {
 
             const listItem = document.createElement('li');
             listItem.innerHTML = `
-                <div><img src="image/${value.image}"/></div>
+                <img src="${value.img}" alt="${value.name}"/>
                 <div>${value.name}</div>
                 <div>${value.price.toLocaleString()}</div>
                 <div>${value.quantity}</div>
@@ -155,6 +103,7 @@ function reloadCard() {
                     <span class="count">${value.quantity}</span>
 
                     <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                    
                 </div>
             `;
 
@@ -177,3 +126,11 @@ function changeQuantity(key,quantity){
         }
         reloadCard();
 }
+
+function sortProductsByPrice() {
+    product.sort((a, b) => a.price - b.price);
+    displayProducts();
+}
+
+document.getElementById('sortButton').addEventListener('click', sortProductsByPrice);
+
