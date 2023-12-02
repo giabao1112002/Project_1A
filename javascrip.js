@@ -25,7 +25,7 @@ let product=[
     {
         id:2,
         name:"HotDog",
-        img:"Hamburger1.png",
+        img:"img/hotdog1.png",
         price:300000
 
     },

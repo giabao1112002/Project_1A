@@ -138,6 +138,7 @@ body {
 }
 .header1 .shopping img{
 width: 40px;
+
 }
 .header1 .shopping span{
     background-color: red;
@@ -172,6 +173,7 @@ letter-spacing: 1px;
 }
 .buy .list .item img{
     width: 90%;
+    height: 150px;
 }
 .buy .list .item .title{
     font-weight: 600;
