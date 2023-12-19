@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/bootstrap.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="styles_contact.css">
+    <link rel="stylesheet" href="styles_homepage.css">
+    <script>
+        $(document).ready(function () {
+          $('.dropdown-submenu a.test').on("click", function (e) {
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+      </script>
+      <style>
+        .dropdown-submenu {
+          position: relative;
+        }
+    
+        .dropdown-submenu .dropdown-menu {
+          top: 0;
+          left: 100%;
+          margin-top: -1px;
+        }
+    
+       
+      </style>
+</head>
+
+<body>
+    <div class="shadow p-3 mb-5 bg-body rounded">
+        <div id="header">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"><img src="img/pageicon.png" alt="">Yummy Yield</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                            </li>
+
+                            <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Contact
+                                  <span class="caret"></span></button>
+                                <ul class="dropdown-menu">
+                                  <li><a tabindex="-1" href="contact.html">Comment</a></li>
+                              
+                                  <li class="dropdown-submenu">
+                                    <a class="test" tabindex="-1" href="#">Location<span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a tabindex="-1" href="location.html">Google Maps</a></li>
+                                      <li><a tabindex="-1" href="https://www.facebook.com/profile.php?id=61552261030510">Facebook</a></li>
+                                      
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </div>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="content1">
+        <div class="container-sm-1" style="color: white;">
+            <h2>Profesional</h2>
+            <h2>Best Services</h2>
+            <h2>Fast</h2>
+
+
+        </div>
+
+    </div>
+    <div class="contact" style="width: 70%;background-color: white; padding: 20px;">
+        <center>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2934.845188235816!2d18.10953317651413!3d42.64344181715057!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134c74ccb97d81f7%3A0xabb7a3d7661ecf40!2sCoffee%20%26%20Fast%20food%20Yummmi!5e0!3m2!1sen!2s!4v1702958247757!5m2!1sen!2s"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </center>
+    </div>
+
+
+    <footer class="text-center text-lg-start" style="background-color:black;">
+        <div class="container d-flex justify-content-center py-5">
+            <button type="button" style="background-color: #54456b;"
+                onclick="navigateTo('https://www.facebook.com/BACKSBURGERS')">
+                <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
+            </button>
+            <button type="button" style="background-color: #54456b;"
+                onclick="navigateTo('https://www.youtube.com/@BestEverFoodReviewShow')">
+                <i><box-icon name='youtube' type='logo'></box-icon> </i>
+            </button>
+
+
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2023 Copyright:
+            <a class="text-white" href="#">Yummy Yield</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script>
+        function navigateTo(url) {
+            window.location.href = url; // Redirect to the specified URL
+        }
+    </script>
+
+</body>
+
+</html>

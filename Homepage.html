@@ -17,6 +17,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <link rel="stylesheet" href="styles_homepage.css">
+
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-submenu a.test').on("click", function (e) {
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+  </script>
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+    }
+
+   
+  </style>
 </head>
 
 <body onload="initApp()">
@@ -38,14 +61,29 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="about.html">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-              </li>
+              
+
+                <div class="dropdown">
+                  <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Contact
+                    <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a tabindex="-1" href="contact.html">Comment</a></li>
+                
+                    <li class="dropdown-submenu">
+                      <a class="test" tabindex="-1" href="#">Location<span class="caret"></span></a>
+                      <ul class="dropdown-menu">
+                        <li><a tabindex="-1" href="location.html">Google Maps</a></li>
+                        <li><a tabindex="-1" href="#">Facebook</a></li>
+                        
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              
+
+
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchfood">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
 
           </div>
         </div>
@@ -54,7 +92,7 @@
   </div>
 
   <div id="content1">
-    <div class="container-sm-1">
+    <div class="container-sm-1" style="color: white;">
       <h2>Profesional</h2>
       <h2>Best Services</h2>
       <h2>Fast</h2>
@@ -63,6 +101,7 @@
 
 
   <div class="buy">
+
     <div class="header1">
       <h1>Menu</h1>
       <div class="shopping">
@@ -72,25 +111,43 @@
     </div>
 
     <div class="submenu">
-      <button id="sortButton">Sort by Price</button>
-      <div class="list"></div>
+      <div class="button-container">
+        <button id="sortButton">Sort by Price</button>
+        <button id="sortButton2">Sort by Price</button>
+        <button id="sortByNameButton">Sort by Name</button>
+        <button id="sortByNameButton2">Sort by Name</button>
+      </div>
+
+
+
+
+      <div class="list" id="list"></div>
+
+      <center>
+
+        <a href="#" onclick="initApp()" style="color: black;">
+          1</a>
+        <a href="#" onclick="initApp2()" style="color: black;">
+          2</a>
+
+      </center>
     </div>
 
- 
-    
+
+
 
 
     <div class="card">
       <h1>Cart</h1>
       <ul class="listCard"></ul>
+
       <div class="checkout">
         <div class="total" style="color: white;">0</div>
         <div class="closeShopping" style="color: white;">Close</div>
-        <center>
-          <div class="Order" style="color: white;">
-            <a href="" style="color: white;">Order Now</a>
-          </div>
-        </center>
+        <div class='order' style="color: white;" data-toggle="modal" data-target="#flipFlop">Order now</div>
+        <div class="popup">
+
+        </div>
       </div>
 
 
@@ -99,20 +156,72 @@
 
 
 
+  <div class="modal fade" id="flipFlop" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="modalLabel">Take Information</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+
+        </div>
+        <div class="modal-body">
+          <form action="">
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputName">Name</label>
+              <input type="text" class="form-control" id="namelast" placeholder="Enter name">
+              <p style="color: red;" id="nameerror"></p>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputName">Phone Number</label>
+              <input type="text" class="form-control" id="phonelast" placeholder="Enter Phone">
+              <p style="color: red;" id="phoneerror"></p>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 10px;">
+              <label for="exampleInputName">Address</label>
+              <input type="text" class="form-control" id="addresslast" placeholder="Enter Address">
+              <p style="color: red;" id="addresserror"></p>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="order()">Order</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="custom-modal" id="successModal">
+    <div class="custom-modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Thank you for choosing us!</h2>
+      <p>Your order has been successfully placed.</p>
+      <p id="userInfo"></p>
+      <p id="totalInfo"></p>
+      <p id="result" onclick="showResult()">Click Here for seeing products</p>
+    </div>
+  </div>
+
+
+
   <footer class="text-center text-lg-start" style="background-color:black;">
     <div class="container d-flex justify-content-center py-5">
-      <button type="button" style="background-color: #54456b;">
+      <button type="button" style="background-color: #54456b;"
+        onclick="navigateTo('https://www.facebook.com/BACKSBURGERS')">
         <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
       </button>
-      <button type="button" style="background-color: #54456b;">
+      <button type="button" style="background-color: #54456b;"
+        onclick="navigateTo('https://www.youtube.com/@BestEverFoodReviewShow')">
         <i><box-icon name='youtube' type='logo'></box-icon> </i>
       </button>
-      <button type="button" style="background-color: #54456b;">
-        <i><box-icon name='twitter' type='logo'></box-icon> </i>
-      </button>
-      <button type="button" style="background-color: #54456b;">
-        <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
-      </button>
+
+
     </div>
 
     <!-- Copyright -->

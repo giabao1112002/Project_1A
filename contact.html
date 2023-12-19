@@ -17,6 +17,29 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <link rel="stylesheet" href="styles_contact.css">
+  <link rel="stylesheet" href="styles_homepage.css">
+  <script>
+    $(document).ready(function () {
+      $('.dropdown-submenu a.test').on("click", function (e) {
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+    });
+  </script>
+  <style>
+    .dropdown-submenu {
+      position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+      top: 0;
+      left: 100%;
+      margin-top: -1px;
+    }
+
+   
+  </style>
 </head>
 
 <body>
@@ -38,52 +61,87 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="about.html">About</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
-              </li>
+
+              <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Contact
+                  <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="contact.html">Comment</a></li>
+              
+                  <li class="dropdown-submenu">
+                    <a class="test" tabindex="-1" href="#">Location<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a tabindex="-1" href="location.html">Google Maps</a></li>
+                      <li><a tabindex="-1" href="#">Facebook</a></li>
+                      
+                    </ul>
+                  </li>
+                </ul>
+              </div>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
+
           </div>
         </div>
       </nav>
     </div>
   </div>
-<div id="content1">
-      <div class="container-sm-1">
-        <h2>Profesional</h2>
-        <h2>Best Services</h2>
-        <h2>Fast</h2>
+  <div id="content1">
+    <div class="container-sm-1" style="color: white;">
+      <h2>Profesional</h2>
+      <h2>Best Services</h2>
+      <h2>Fast</h2>
 
 
-      </div>
+    </div>
 
-</div>
-<div class="contact">
-  <h1>Contact Us</h1>
-  <form>
+  </div>
+  <div class="contact" style="width: 70%;background-color: white; padding: 20px;">
+    <h1>Contact Us</h1>
+    <form>
       <div class="form-group" style="margin-bottom: 10px;">
-        <label for="exampleInputEmail1">Name</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name">
-        
+        <label for="exampleInputName">Name</label>
+        <input type="text" class="form-control" id="exampleInputName" placeholder="Enter name">
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Email</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="exampleInputEmail1">Email</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+          placeholder="Enter email">
       </div>
       <div class="form-group">
-          <label for="exampleInputPassword1">Message</label>
-          <input type="password" class="form-control" style="height: 100px;">
-        </div>
+        <label for="exampleInputPassword1">Message</label>
+        <input type="password" class="form-control" style="height: 100px;">
+      </div>
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
-</div>
+  </div>
 
 
- 
+  <footer class="text-center text-lg-start" style="background-color:black;">
+    <div class="container d-flex justify-content-center py-5">
+      <button type="button" style="background-color: #54456b;"
+        onclick="navigateTo('https://www.facebook.com/BACKSBURGERS')">
+        <i><box-icon name='facebook-square' type='logo'></box-icon> </i>
+      </button>
+      <button type="button" style="background-color: #54456b;"
+        onclick="navigateTo('https://www.youtube.com/@BestEverFoodReviewShow')">
+        <i><box-icon name='youtube' type='logo'></box-icon> </i>
+      </button>
 
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2023 Copyright:
+      <a class="text-white" href="#">Yummy Yield</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script>
+    function navigateTo(url) {
+      window.location.href = url; // Redirect to the specified URL
+    }
+  </script>
 
 </body>
 
